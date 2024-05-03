@@ -20,12 +20,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  {% include 'nav.html' %}
   <header class="container">
-    <h1 class="mt-4">Alok Shandilya <i class="fa fa-link"></i></h1>
+    <h1 class="mt-4 courier-prime-bold">Alok Shandilya</h1>
     <div class="card mt-2 mb-4">
       <div class="card-header">
-        <footer class="blockquote-footer mt-1 mb-1"><cite title="About Me">About Me</cite></footer>
+        <footer class="blockquote-footer mt-1 mb-1 courier-prime-bold-italic" style="font-size: 18px"><cite
+            title="About Me">About Me</cite></footer>
       </div>
       <div class="card-body">
         <blockquote class="blockquote mb-0">
@@ -38,46 +38,35 @@
     </div>
   </header>
 
-  <section id="github-stats" class="container">
-    <h2 class="mt-2 mb-3">GitHub Stats</h2>
-    <div class="row">
-      <div class="col">
-        <div class="card" style="width: 30rem;">
-          <img src="http://github-readme-streak-stats.herokuapp.com?user=alokshandilya&theme=nord" class="card-img-top"
-            alt="GitHub Streak">
-          <div class="card-body">
-            <h5 class="card-title">GitHub Streak</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 30rem;">
+  <section id="github-stats" class="container container-fluid">
+    <h2 class="mt-2 mb-3 courier-prime-bold">GitHub Stats</h2>
+    <div class="row justify-content">
+      <div class="col-md-6">
+        <div class="card">
           <img
             src="https://github-readme-stats.vercel.app/api?username=alokshandilya&show_icons=true&theme=nord&rank_icon=github"
             class="card-img-top" alt="Overall GitHub Stats">
           <div class="card-body">
-            <h5 class="card-title">GitHub Stats</h5>
+            <h5 class="card-title courier-prime-regular-italic">GitHub Stats</h5>
           </div>
         </div>
       </div>
-      <div class="col">
-      </div>
-      <div class="card" style="width: 25rem;">
-        <img
-          src="https://github-readme-stats.vercel.app/api/top-langs/?username=alokshandilya&theme=nord&include_all_commits=true&count_private=false&layout=compact"
-          class="card-img-top" alt="Top Languages Used">
-        <div class="card-body">
-          <h5 class="card-title">Top Languages Used</h5>
+      <div class="col-md-6 mt-2">
+        <div class="card">
+          <img src="http://github-readme-streak-stats.herokuapp.com?user=alokshandilya&theme=nord" class="card-img-top"
+            alt="GitHub Streak">
+          <div class="card-body">
+            <h5 class="card-title courier-prime-regular-italic">GitHub Streak</h5>
+          </div>
         </div>
       </div>
-    </div>
   </section>
 
 
 
   <main>
     <section class="container">
-      <h2 class="mt-4 mb-4">Projects</h2>
+      <h2 class="mt-4 mb-4 courier-prime-bold">Projects</h2>
       <div>
         {% for project in projects %}
         {% include 'projectitem.html' %}
@@ -86,7 +75,7 @@
     </section>
 
     <section class="container">
-      <h2 class="mt-4 mb-4">Experience</h2>
+      <h2 class="mt-4 mb-4 courier-prime-bold">Experience</h2>
       <p>TODO - experience section</p>
     </section>
   </main>

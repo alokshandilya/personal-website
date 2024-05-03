@@ -3,3 +3,27 @@
     object-fit: cover;
     width: 100%;
 }
+* {
+    font-family: "Courier Prime", monospace;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.courier-prime-bold {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.courier-prime-regular-italic {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.courier-prime-bold-italic {
+  font-weight: 700;
+  font-style: italic;
+}
+
+h1 {
+    font-size: 45px;
+}
