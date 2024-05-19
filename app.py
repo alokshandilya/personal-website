@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify
+import db_helper
 
 app = Flask(__name__)
 
