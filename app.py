@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request, redirect, url_for
+from flask import Flask, render_template, jsonify, request, redirect, url_for, make_response
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 from dotenv import load_dotenv
@@ -27,7 +27,7 @@ auth = HTTPBasicAuth()
 
 # User data
 users = {
-    "username": generate_password_hash("password")
+    username: generate_password_hash(password)
 }
 
 
@@ -55,7 +55,11 @@ def verify_password(username, password):
 @app.route("/api/projects", methods=["GET"])
 def edit_projects():
     json_data = json.dumps([convert_mongo_document(project) for project in projects], indent=4)
-    return render_template('edit_projects.html', json_data=json_data)
+    response = make_response(render_template('edit_projects.html', json_data=json_data))
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "0"
+    return response
 
 @app.route("/api/projects", methods=["POST"])
 @auth.login_required
