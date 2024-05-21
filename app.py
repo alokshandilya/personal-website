@@ -9,14 +9,7 @@ load_dotenv()
 uri = os.getenv("mongo_uri")
 
 # Create a new client and connect to the server
-client= MongoClient(uri, server_api=ServerApi("1"))
-
-# Send a ping to confirm a successful connection
-try:
-    client.admin.command("ping")
-    print("Pinged your deployment. You successfully connected to MongoDB!")
-except Exception as e:
-    print(e)
+client = MongoClient(uri, server_api=ServerApi("1"))
 
 # Access the database and collection
 db = client.portfolio
@@ -25,11 +18,13 @@ projects_collection = db.projects
 # Create a Flask application
 app = Flask(__name__)
 
+
 @app.route("/")
 def index():
     # Retrieve all documents from the 'projects' collection
     projects = list(projects_collection.find())
     return render_template("home.html", projects=projects)
+
 
 # TODO: later
 # @app.route("/api/projects")
