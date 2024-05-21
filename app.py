@@ -1,42 +1,41 @@
 from flask import Flask, render_template, jsonify
-import db_helper
+from pymongo import MongoClient
+from pymongo.server_api import ServerApi
+from dotenv import load_dotenv
+import os
 
+# Load environment variables
+load_dotenv()
+uri = os.getenv("mongo_uri")
+
+# Create a new client and connect to the server
+client= MongoClient(uri, server_api=ServerApi("1"))
+
+# Send a ping to confirm a successful connection
+try:
+    client.admin.command("ping")
+    print("Pinged your deployment. You successfully connected to MongoDB!")
+except Exception as e:
+    print(e)
+
+# Access the database and collection
+db = client.portfolio
+projects_collection = db.projects
+
+# Create a Flask application
 app = Flask(__name__)
 
-PROJECTS = [
-    {
-        "id": 1,
-        "title": "Movie Rating Review Application",
-        "description": "A web application to rate and review movies, lacks a dedicated database, uses local storage to store data.",
-        "domain": "Web Development",
-        "tech-stack": "HTML, CSS, TypeScript, Angular",
-    },
-    {
-        "id": 2,
-        "title": "Bengali and Assamese Handwritten Character Recognition",
-        "description": "A machine learning model to recognize handwritten Bengali and Assamese characters and find similarities between them.",
-        "domain": "Machine Learning",
-        "tech-stack": "Python, Tensorflow, Keras",
-    },
-    {
-        "id": 3,
-        "title": "Personal Portfolio Website",
-        "description": "Personal portfolio website to showcase projects and skills.",
-        "domain": "Web Development",
-        "tech-stack": "Python, Flask",
-    },
-]
-
-
 @app.route("/")
-def hello_world():
-    return render_template("home.html", projects=PROJECTS)
+def index():
+    # Retrieve all documents from the 'projects' collection
+    projects = list(projects_collection.find())
+    return render_template("home.html", projects=projects)
 
-
-@app.route("/api/projects")
-def list_projects():
-    return jsonify(PROJECTS)
+# TODO: later
+# @app.route("/api/projects")
+# def list_projects():
+#     return jsonify(projects_collection)
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host="0.0.0.0", debug=True, use_reloader=False)
