@@ -18,13 +18,19 @@
 .courier-prime-regular-italic {
   font-weight: 400;
   font-style: italic;
+  font-size: 24px;
 }
 
 .courier-prime-bold-italic {
   font-weight: 700;
   font-style: italic;
+  font-size: 24px;
 }
 
 h1 {
     font-size: 45px;
+}
+
+p {
+  margin-bottom: 0px;
 }
