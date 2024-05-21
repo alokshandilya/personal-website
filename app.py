@@ -19,17 +19,25 @@ projects_collection = db.projects
 app = Flask(__name__)
 
 
+# Retrieve all documents from the 'projects' collection
+projects = list(projects_collection.find())
+
+
 @app.route("/")
 def index():
-    # Retrieve all documents from the 'projects' collection
-    projects = list(projects_collection.find())
     return render_template("home.html", projects=projects)
 
 
-# TODO: later
-# @app.route("/api/projects")
-# def list_projects():
-#     return jsonify(projects_collection)
+# Helper function to convert MongoDB documents to JSON serializable format
+def convert_mongo_document(doc):
+    doc["_id"] = str(doc["_id"])  # Convert ObjectId to string
+    return doc
+
+
+@app.route("/api/projects")
+def list_projects():
+    json_data = [convert_mongo_document(project) for project in projects]
+    return jsonify(json_data)
 
 
 if __name__ == "__main__":
