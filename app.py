@@ -1,12 +1,18 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request, redirect, url_for
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 from dotenv import load_dotenv
+from flask_httpauth import HTTPBasicAuth
+from werkzeug.security import generate_password_hash, check_password_hash
+import json
+from bson import ObjectId
 import os
 
 # Load environment variables
 load_dotenv()
 uri = os.getenv("mongo_uri")
+username = os.getenv("username")
+password = os.getenv("password")
 
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi("1"))
@@ -17,6 +23,12 @@ projects_collection = db.projects
 
 # Create a Flask application
 app = Flask(__name__)
+auth = HTTPBasicAuth()
+
+# User data
+users = {
+    "username": generate_password_hash("password")
+}
 
 
 # Retrieve all documents from the 'projects' collection
@@ -33,11 +45,33 @@ def convert_mongo_document(doc):
     doc["_id"] = str(doc["_id"])  # Convert ObjectId to string
     return doc
 
+# Basic Auth verification callback
+@auth.verify_password
+def verify_password(username, password):
+    if username in users and check_password_hash(users.get(username), password):
+        return username
 
-@app.route("/api/projects")
-def list_projects():
-    json_data = [convert_mongo_document(project) for project in projects]
-    return jsonify(json_data)
+
+@app.route("/api/projects", methods=["GET"])
+def edit_projects():
+    json_data = json.dumps([convert_mongo_document(project) for project in projects], indent=4)
+    return render_template('edit_projects.html', json_data=json_data)
+
+@app.route("/api/projects", methods=["POST"])
+@auth.login_required
+def save_projects():
+    try:
+        # Get the JSON data from form
+        json_data = request.form["json_data"]
+        new_data = json.loads(json_data)
+
+        # Clear the collection and insert new data
+        projects_collection.delete_many({})
+        projects_collection.insert_many(new_data)
+
+        return redirect(url_for('edit_projects'))
+    except Exception as e:
+        return str(e), 400
 
 
 if __name__ == "__main__":
