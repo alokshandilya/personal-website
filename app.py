@@ -1,4 +1,12 @@
-from flask import Flask, render_template, jsonify, request, redirect, url_for, make_response
+from flask import (
+    Flask,
+    render_template,
+    jsonify,
+    request,
+    redirect,
+    url_for,
+    make_response,
+)
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 from dotenv import load_dotenv
@@ -26,9 +34,7 @@ app = Flask(__name__)
 auth = HTTPBasicAuth()
 
 # User data
-users = {
-    username: generate_password_hash(password)
-}
+users = {username: generate_password_hash(password)}
 
 
 # Retrieve all documents from the 'projects' collection
@@ -40,10 +46,16 @@ def index():
     return render_template("home.html", projects=projects)
 
 
+@app.route("/google721ed54125969664.html")
+def google_verification():
+    return render_template("google721ed54125969664.html")
+
+
 # Helper function to convert MongoDB documents to JSON serializable format
 def convert_mongo_document(doc):
     doc["_id"] = str(doc["_id"])  # Convert ObjectId to string
     return doc
+
 
 # Basic Auth verification callback
 @auth.verify_password
@@ -54,12 +66,15 @@ def verify_password(username, password):
 
 @app.route("/api/projects", methods=["GET"])
 def edit_projects():
-    json_data = json.dumps([convert_mongo_document(project) for project in projects], indent=4)
-    response = make_response(render_template('edit_projects.html', json_data=json_data))
+    json_data = json.dumps(
+        [convert_mongo_document(project) for project in projects], indent=4
+    )
+    response = make_response(render_template("edit_projects.html", json_data=json_data))
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Pragma"] = "no-cache"
     response.headers["Expires"] = "0"
     return response
+
 
 @app.route("/api/projects", methods=["POST"])
 @auth.login_required
@@ -73,7 +88,7 @@ def save_projects():
         projects_collection.delete_many({})
         projects_collection.insert_many(new_data)
 
-        return redirect(url_for('edit_projects'))
+        return redirect(url_for("edit_projects"))
     except Exception as e:
         return str(e), 400
 
