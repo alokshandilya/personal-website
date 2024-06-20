@@ -2,23 +2,14 @@
   <ul>
     {% for project in projects %}
     <li>
-      <h4 class="courier-prime-bold" style="display: inline;">{{project.name}}</h4>
+      <h5 class="courier-prime-bold" style="display: inline;">{{project.name}}</h5>
       <p class="courier-prime-regular-italic" style="display: inline;"> |
         {% for tech in project.tech_stack %}
         {{tech}}{% if not loop.last %}, {% endif %}
         {% endfor %}</p>
-    </li>
-    <ul>
-      <li>
-        <p class="mb-2">{{project.description}}</p>
-      </li>
-      <li>
-        <p class="mb-2"><a href="{{project.source_code}}" target="_blank">Source Code</a></p>
-      </li>
-      <li>
-        <p class="mb-7"><a href="{{project.deployment_link}}" target="_blank">Deployment Link</a></p>
-      </li>
-    </ul>
-    {% endfor %}
+      <p class="mb-2 mt-2">{{project.description}}</p>
+      <p class="mb-2"><a href="{{project.source_code}}" target="_blank">Source Code</a></p>
+      <p class="mb-4"><a href="{{project.deployment_link}}" target="_blank">Deployment Link</a></p>
+      {% endfor %}
   </ul>
 </div>
