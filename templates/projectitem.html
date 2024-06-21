@@ -2,8 +2,8 @@
   <ul>
     {% for project in projects %}
     <li>
-      <h5 class="courier-prime-bold" style="display: inline;">{{project.name}}</h5>
-      <p class="courier-prime-regular-italic" style="display: inline;"> |
+      <h5 class="courier-prime-bold" style="display: inline; color: #689D6A;">{{project.name}}</h5>
+      <p class="courier-prime-regular-italic" style="display: inline; color: #98971A;"> |
         {% for tech in project.tech_stack %}
         {{tech}}{% if not loop.last %}, {% endif %}
         {% endfor %}</p>

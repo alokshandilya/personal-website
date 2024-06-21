@@ -1,13 +1,23 @@
 #banner {
-    height: 360px;
-    object-fit: cover;
-    width: 100%;
+  height: 360px;
+  object-fit: cover;
+  width: 100%;
 }
+
 * {
-    font-family: "Courier Prime", monospace;
-    font-style: normal;
-    font-weight: 400;
-    font-size: medium;
+  font-family: "Courier Prime", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: medium;
+  color: #EBDBB2;
+}
+
+a:link {
+  color: #458588;
+}
+
+a:visited {
+  color: #458588;
 }
 
 .courier-prime-bold {
@@ -37,7 +47,8 @@ p {
 
 @media (min-width: 768px) {
   .responsive-image {
-    width: 220px; /* Adjust this value to reduce the image size for wider screens */
+    width: 220px;
+    /* Adjust this value to reduce the image size for wider screens */
   }
 }
 
@@ -47,6 +58,7 @@ p {
 
 @media (min-width: 768px) {
   .github-chart {
-    width: 80%; /* Adjust this value to reduce the image size for wider screens */
+    width: 80%;
+    /* Adjust this value to reduce the image size for wider screens */
   }
 }
