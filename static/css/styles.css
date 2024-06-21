@@ -40,3 +40,13 @@ p {
     width: 220px; /* Adjust this value to reduce the image size for wider screens */
   }
 }
+
+.github-chart {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .github-chart {
+    width: 80%; /* Adjust this value to reduce the image size for wider screens */
+  }
+}
