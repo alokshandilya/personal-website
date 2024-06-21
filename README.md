@@ -11,3 +11,9 @@
 - Desktop View
 
 ![image](https://github.com/alokshandilya/personal-website/assets/77057272/a5ae04a0-3f8e-4efd-b9f5-6abb4133c444)
+
+- Mobile View
+
+<p align="center">
+  <img src="https://github.com/alokshandilya/personal-website/assets/77057272/095b390f-552e-46fd-a26d-d2de419a0d4c" alt="mobile view screenshot" style="width: 30%;">
+</p>
