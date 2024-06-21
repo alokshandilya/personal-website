@@ -6,6 +6,8 @@
 - Ensured robust authentication mechanisms for API endpoints to protect sensitive data.
 - Designed an intuitive and interactive user interface to enhance user engagement and provide a comprehensive overview of my professional journey.
 
-## Screenshot
+## Screenshots
 
-![image](https://github.com/alokshandilya/personal-website/assets/77057272/2de124f7-e534-476c-9299-4a664771bd18)
+- Desktop View
+
+![image](https://github.com/alokshandilya/personal-website/assets/77057272/a5ae04a0-3f8e-4efd-b9f5-6abb4133c444)
