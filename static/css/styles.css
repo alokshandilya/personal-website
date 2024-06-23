@@ -13,28 +13,11 @@
 }
 
 a:link {
-  color: #77BDFB;
+  color: #8fbcbb;;
 }
 
 a:visited {
-  color: #A2D2FB;
-}
-
-.courier-prime-bold {
-  font-weight: bold;
-  font-style: medium;
-}
-
-.courier-prime-regular-italic {
-  font-weight: bold;
-  font-style: italic;
-  font-size: medium;
-}
-
-.courier-prime-bold-italic {
-  font-weight: bold;
-  font-style: italic;
-  font-size: medium;
+  color: #8fbcbb;
 }
 
 p {
