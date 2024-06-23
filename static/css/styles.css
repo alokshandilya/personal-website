@@ -62,3 +62,14 @@ p {
     /* Adjust this value to reduce the image size for wider screens */
   }
 }
+
+.social {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  margin-left: 20px;
+}
+
+.social a {
+  text-decoration: none;
+}

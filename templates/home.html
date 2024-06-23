@@ -49,8 +49,8 @@
   <header class="container container-fluid">
     <img src="static/images/my-pic.jpeg" alt="Alok's Image"
       class="rounded-circle img-fluid img-thumbnail mx-auto responsive-image" style="float: right; margin: 1em;">
-    <h1 class="mt-4 courier-prime-bold mb-0" style="color: #77BDFB;">Alok Shandilya</h1>
-    <hr class="mt-1 mb-4">
+    <h1 class="mt-4 courier-prime-bold mb-2" style="color: #77BDFB;">Alok Shandilya</h1>
+    <hr class="mt-0 mb-4">
     <p class="me-4 p-2" style="background-color: #21262D;">👋 I am a python, django, flask developer and a machine
       learning
       enthusiast, who is
@@ -91,7 +91,8 @@
 
   <main>
     <section class="container">
-      <h2 class="mt-4 mb-3 courier-prime-bold" style="color: #77BDFB">Projects</h2>
+      <h2 class="mt-4 mb-2 courier-prime-bold" style="color: #77BDFB">Projects</h2>
+      <hr class="mt-0">
       <div>
         {% include 'projectitem.html' %}
       </div>
@@ -104,12 +105,13 @@
   </main>
 
   <section class="container">
-    <h2 class="mt-4 mb-2 courier-prime-bold" style="color: #77BDFB">Connect with me</h2>
-    <ul>
-      <li><i style="color: #89929B;" class="fab fa-github mr-5">: </i><a href="https://github.com/alokshandilya"
-          target="_blank">GitHub</a></li>
-      <li><i style="color: #89929B;" class="fab fa-linkedin mr-5">: </i><a href="https://linkedin.com/in/alokshandilya"
-          target="_blank">LinkedIn</a></li>
+    <h2 class="mt-4 mb-3 courier-prime-bold" style="color: #77BDFB">Connect with me</h2>
+    <hr>
+    <ul class="social">
+      <li><i style="color: #89929B;" class="fab fa-github me-2"></i><a class="me-3"
+          href="https://github.com/alokshandilya" target="_blank">GitHub</a></li>
+      <li><i style="color: #89929B;" class="fab fa-linkedin me-2"></i><a class="me-3"
+          href="https://linkedin.com/in/alokshandilya" target="_blank">LinkedIn</a></li>
     </ul>
   </section>
   {% include 'footer.html' %}
