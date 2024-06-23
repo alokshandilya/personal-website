@@ -5,19 +5,19 @@
 }
 
 * {
-  font-family: "Courier Prime", monospace;
+  font-family: "Jetbrains Mono", monospace;
   font-style: normal;
   font-weight: 400;
   font-size: medium;
-  color: #e5e9f0;
+  color: #ECF2F8;
 }
 
 a:link {
-  color: #8fbcbb;
+  color: #77BDFB;
 }
 
 a:visited {
-  color: #8fbcbb;
+  color: #A2D2FB;
 }
 
 .courier-prime-bold {
