@@ -35,17 +35,6 @@ p {
   }
 }
 
-.github-chart {
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .github-chart {
-    width: 80%;
-    /* Adjust this value to reduce the image size for wider screens */
-  }
-}
-
 .social {
   list-style-type: none;
 }
