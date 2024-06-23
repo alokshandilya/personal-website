@@ -8,8 +8,8 @@
         {{tech}}{% if not loop.last %}, {% endif %}
         {% endfor %}</p>
       <p class="mb-2 mt-2">{{project.description}}</p>
-      <p class="mb-2"><a href="{{project.source_code}}" target="_blank">Source Code</a></p>
-      <p class="mb-4"><a href="{{project.deployment_link}}" target="_blank">Deployment Link</a></p>
+      <p class="mb-2"><a style="background-color: #21262D" class="ps-1 pe-1" href="{{project.source_code}}" target="_blank">Source Code</a></p>
+      <p class="mb-4"><a style="background-color: #21262D" class="ps-1 pe-1" href="{{project.deployment_link}}" target="_blank">Deployment Link</a></p>
       {% endfor %}
   </ul>
 </div>
