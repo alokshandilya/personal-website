@@ -1,6 +1,6 @@
 # Personal Website
 
-- [Deployment Link - on Vercel](https://alokshandilya.vercel.app)
+- Deployment Links
   - [https://alokshandilya.vercel.app](https://alokshandilya.vercel.app)
   - [https://bit.ly/alokshandilyaweb](https://bit.ly/alokshandilyaweb)
 
