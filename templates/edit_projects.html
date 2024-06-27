@@ -39,14 +39,16 @@
 
   <!-- CodeMirror -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/material-darker.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/material-darker.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
 </head>
 
 <body style="background-color: #0D1117;">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 
   <header class="container container-fluid">
     <h1 class="mt-4 mb-2 fw-bold" style="color: #77BDFB;">Edit Projects</h1>
@@ -57,8 +59,9 @@
     <form id="edit-projects-form" action="/api/projects" method="post">
       <div class="mb-3">
         <label for="json_data" class="form-label" style="color: #77BDFB;">Projects JSON Data</label>
-        <textarea name="json_data" id="json_data" class="form-control" rows="20" style="display: none;">{{ json_data }}</textarea>
-        <div id="editor" style="height: 500px; background-color: #21262D; color: #C9D1D9;"></div>
+        <textarea name="json_data" id="json_data" class="form-control" rows="20" style="display: none;">{{ json_data
+          }}</textarea>
+        <div id="editor" style="background-color: #21262D; color: #C9D1D9;"></div>
         <small class="form-text text-muted" style="color: #C9D1D9;">Ensure your JSON is correctly formatted.</small>
       </div>
       <button type="submit" class="btn btn-primary">Save</button>
@@ -75,7 +78,8 @@
     var editor = CodeMirror(document.getElementById("editor"), {
       lineNumbers: true,
       mode: "application/json",
-      theme: "material-darker"
+      theme: "material-darker",
+      viewportMargin: Infinity  // this makes CodeMirror fit its content height
     });
 
     // Set initial content of the editor
