@@ -47,11 +47,12 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #21262d;
+  border: 1px solid #21262d;
 }
 
 nav li a {
   text-decoration: none;
+  font-size: smaller;
 }
 
 nav li {
