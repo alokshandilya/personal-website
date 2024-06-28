@@ -42,3 +42,18 @@ p {
 .social a {
   text-decoration: none;
 }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #21262d;
+}
+
+nav li a {
+  text-decoration: none;
+}
+
+nav li {
+  list-style-type: none;
+}
