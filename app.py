@@ -37,12 +37,10 @@ auth = HTTPBasicAuth()
 users = {username: generate_password_hash(password)}
 
 
-# Retrieve all documents from the 'projects' collection
-projects = list(projects_collection.find())
-
-
 @app.route("/")
 def index():
+    # Retrieve all documents from the 'projects' collection each time the route is accessed
+    projects = list(projects_collection.find())
     return render_template("home.html", projects=projects)
 
 
