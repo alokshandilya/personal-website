@@ -64,6 +64,8 @@ def verify_password(username, password):
 
 @app.route("/api/projects", methods=["GET"])
 def edit_projects():
+    # Retrieve all documents from the 'projects' collection each time the route is accessed
+    projects = list(projects_collection.find())
     json_data = json.dumps(
         [convert_mongo_document(project) for project in projects], indent=4
     )
