@@ -49,6 +49,11 @@ def google_verification():
     return render_template("google721ed54125969664.html")
 
 
+@app.route("/resume")
+def get_resume():
+    return redirect("https://bit.ly/alokshandilya")
+
+
 # Helper function to convert MongoDB documents to JSON serializable format
 def convert_mongo_document(doc):
     doc["_id"] = str(doc["_id"])  # Convert ObjectId to string
