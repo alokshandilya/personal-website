@@ -5,7 +5,7 @@
   - [https://bit.ly/alokshandilyaweb](https://bit.ly/alokshandilyaweb)
 
 <p align="center">
-  <img src="https://github.com/alokshandilya/personal-website/assets/77057272/1a20d67a-b56d-45fe-9ab2-d1e3a2a84f2a" alt="bit.ly qrcode" style="width: 30%;">
+  <img src="https://github.com/alokshandilya/personal-website/assets/77057272/1a20d67a-b56d-45fe-9ab2-d1e3a2a84f2a" alt="bit.ly qrcode" style="width: 150px;">
 </p>
 
 - Developed a dynamic single-page portfolio using Flask, showcasing personal projects and educational background.
